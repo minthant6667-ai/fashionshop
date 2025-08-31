@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrendWave Fashion</title>
+<style>
+  :root {
+    --bg-color: #1c1c2e;
+    --accent-purple: #6a4b9a;
+    --accent-teal: #4aa3a3;
+    --accent-gold: #c5a880;
+    --text-light: #f5f5f5;
+    --shadow-color: rgba(0,0,0,0.3);
+  }
+
+  body { 
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-light);
+    overflow-x: hidden;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+  }
+
+  nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  nav a:hover { color: var(--accent-teal); }
+
+  .hero { text-align: center; padding: 100px 20px; }
+  .hero h2 { font-size: 3em; margin-bottom: 20px; color: var(--accent-purple); }
+  .hero p { font-size: 1.4em; margin-bottom: 40px; color: var(--accent-gold); }
+  .hero button { padding: 15px 50px; font-size: 1.2em; background: var(--accent-teal); color: var(--text-light); border: none; border-radius: 15px; cursor: pointer; }
+
+  .section { text-align: center; padding: 50px 20px; display: none; }
+  .section h3 { font-size: 2em; margin-bottom: 20px; color: var(--accent-purple); }
+  .section p { font-size: 1.2em; color: var(--accent-gold); max-width: 800px; margin: auto; line-height: 1.6; }
+
+  .gallery { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 50px 20px; }
+  .gallery .card { width: 250px; height: 350px; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 20px var(--shadow-color); transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease; background: #2c2c3e; }
+  .gallery .card img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 25px; cursor: pointer; }
+  .gallery .card:hover { transform: scale(1.05) rotateY(3deg) rotateX(3deg); box-shadow: 0 25px 40px var(--shadow-color); filter: brightness(1.05); }
+
+  .product-detail { display: none; text-align: center; padding: 50px 20px; }
+  .product-detail img { width: 300px; height: auto; border-radius: 20px; margin-bottom: 20px; }
+  .close-btn { background: var(--accent-purple); padding: 10px 20px; border: none; border-radius: 10px; color: var(--text-light); cursor: pointer; margin-top: 20px; }
+  .close-btn:hover { background: var(--accent-teal); }
+
+  footer { text-align: center; padding: 40px 20px; background: rgba(255,255,255,0.05); }
+  footer a { color: var(--accent-gold); margin: 0 10px; text-decoration: none; }
+  footer a:hover { color: var(--accent-teal); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>TrendWave</h1>
+  <nav>
+    <a id="homeLink">Home</a>
+    <a id="aboutLink">About</a>
+    <a id="collectionLink">Collection</a>
+    <a id="contactLink">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="homeSection">
+  <h2>Glow with Style!</h2>
+  <p>Fashion for the bold, stylish, and young.</p>
+  <button>Explore Now</button>
+</section>
+
+<section class="section about-section" id="aboutSection">
+  <h3>About TrendWave</h3>
+  <p>TrendWave is a modern fashion brand dedicated to bold, stylish, and trendsetting individuals. We create collections that combine vibrant colors, luxurious fabrics, and contemporary designs, giving you a unique style statement for every occasion.</p>
+</section>
+
+<section class="section gallery-section" id="collectionSection">
+  <h3>Our Collection</h3>
+  <div class="gallery">
+    <div class="card" data-title="Shirts" data-desc="Stylish shirts for all occasions." data-img="https://www.apetogentleman.com/wp-content/uploads/2018/10/best-british-fashion-brands-1.jpg">
+      <img src="https://www.apetogentleman.com/wp-content/uploads/2018/10/best-british-fashion-brands-1.jpg" alt="Shirts">
+    </div>
+    <div class="card" data-title="Pants" data-desc="Comfortable and trendy pants." data-img="https://static.standard.co.uk/2025/03/26/10/10/25450_WMH_Brand_1.jpeg?trim=68,0,119,0&quality=75&auto=webp&width=960">
+      <img src="https://static.standard.co.uk/2025/03/26/10/10/25450_WMH_Brand_1.jpeg?trim=68,0,119,0&quality=75&auto=webp&width=960" alt="Pants">
+    </div>
+    <div class="card" data-title="Jackets" data-desc="Warm jackets for the season." data-img="https://image.hm.com/content/dam/global_campaigns/season_02/men/start-page-assets/w33/MS32LH112-4x5-Teaser-1-v2-w33.jpg?imwidth=4800">
+      <img src="https://image.hm.com/content/dam/global_campaigns/season_02/men/start-page-assets/w33/MS32LH112-4x5-Teaser-1-v2-w33.jpg?imwidth=4800" alt="Jackets">
+    </div>
+    <div class="card" data-title="Accessories" data-desc="Trendy accessories to complete your look." data-img="https://www.kaufbei.tv/magazin/wp-content/uploads/zimnie-trendy-v-muzhskoj-mozhe.jpg">
+      <img src="https://www.kaufbei.tv/magazin/wp-content/uploads/zimnie-trendy-v-muzhskoj-mozhe.jpg" alt="Accessories">
+    </div>
+  </div>
+</section>
+
+<section class="section product-detail" id="productDetail">
+  <h3 id="productTitle">Product Title</h3>
+  <img id="productImg" src="" alt="Product Image">
+  <p id="productDesc">Product Description</p>
+  <button class="close-btn" id="closeDetail">Close</button>
+</section>
+
+<section class="section contact-section" id="contactSection">
+  <h3>Contact Us</h3>
+  <p>Email: minthant667@gmail.com</p>
+  <p>Phone: +95 9 696 652 593</p>
+  <p>Address: 123 Fashion Ave, Style City, Country</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 TrendWave. All rights reserved.</p>
+  <p>
+    <a href="#">Instagram</a> | 
+    <a href="#">Facebook</a> | 
+    <a href="#">TikTok</a>
+  </p>
+</footer>
+
+<script>
+  const sections = {
+    homeLink: 'homeSection',
+    aboutLink: 'aboutSection',
+    collectionLink: 'collectionSection',
+    contactLink: 'contactSection'
+  };
+
+  Object.keys(sections).forEach(linkId => {
+    document.getElementById(linkId).addEventListener('click', () => {
+      document.querySelectorAll('.section, .hero, #productDetail').forEach(sec => sec.style.display = 'none');
+      if(linkId === 'homeLink') {
+        document.getElementById('homeSection').style.display = 'block';
+      } else {
+        document.getElementById(sections[linkId]).style.display = 'block';
+      }
+    });
+  });
+
+  
+</script>
+
+</body>
+</html>
